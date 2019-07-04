@@ -15,9 +15,14 @@ export class ItemService {
   constructor(private http: HttpClient) {
   }
 
-  getItems(): Observable<Item[]> {
+  getItemsInstances(): Observable<Item[]> {
     // return Observable.of(ITEMS).delay(2000);
     return this.http.get(baseURL + 'iteminstances') as Observable<Item[]>;
+  }
+
+  getItems(): Observable<Item[]> {
+    // return Observable.of(ITEMS).delay(2000);
+    return this.http.get(baseURL + 'items') as Observable<Item[]>;
   }
 
   getItem(id: number): Observable<Item> {
