@@ -13,10 +13,13 @@
             <h3>{{item.name | uppercase}}</h3>
           </mat-card-title>
         </mat-card-title-group>
-        <img matCardImage data-src="data:image/png;base64,{{item.image}}" alt={{item.name}}>
+        <a *ngIf="!showImage" type="button" (click)="fileInput.click()" style="cursor: pointer"><h1>Add image</h1></a>
+        <img *ngIf="showImage" matCardImage data-src="data:image/png;base64,{{item.image}}" alt={{item.name}}>
         <mat-card-content>
           <p>{{item.description}}
           </p>
+
+          <h1>Utilidad: {{utilidad}}</h1>
         </mat-card-content>
         <mat-card-actions align="start">
           <button mat-button [routerLink]="['/itemdetail', prev]"><span class="fa fa-chevron-left fa-lg"></span>
@@ -25,8 +28,14 @@
           <button mat-button (click)="onAction($event)">LIKE</button>
           <button mat-button (click)="onAction($event)">SHARE</button>
           <span class="flex-spacer"></span>
-          <button mat-button [routerLink]="['/itemdetail', next]"><span class="fa fa-chevron-right fa-lg"></span>
+          <button mat-button [routerLink]="['/itemdetail/', next]"><span class="fa fa-chevron-right fa-lg"></span>
           </button>
+          <input class="cc-ui-d-none"
+                 type="file"
+                 #fileInput
+                 (change)="uploadImage($event)">
+          <button mat-button (click)="fileInput.click()">Add image</button>
+          <button mat-button (click)="deleteImage()">Delete image</button>
         </mat-card-actions>
       </mat-card>
     </div>

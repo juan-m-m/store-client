@@ -22,7 +22,7 @@ export class InventarioComponent implements OnInit {
       this.categories = categories;
       console.log(categories);
     });
-    this.itemService.getItems().subscribe(items => {
+    this.itemService.getItemsInstances().subscribe(items => {
       this.items = items;
       console.log(items);
     });
