@@ -49,6 +49,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {baseURL} from './shared/baseurl';
 import {HttpClientModule} from '@angular/common/http';
 import {InventarioComponent} from './inventario/inventario.component';
+import {UpdateItemComponent} from './update-item/update-item.component';
+import {ExpenseItemComponent} from './expense-item/expense-item.component';
+import {FeatureItemComponent} from './feature-item/feature-item.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +64,10 @@ import {InventarioComponent} from './inventario/inventario.component';
     HomeComponent,
     ContactComponent,
     LoginComponent,
-    InventarioComponent
+    InventarioComponent,
+    UpdateItemComponent,
+    ExpenseItemComponent,
+    FeatureItemComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,

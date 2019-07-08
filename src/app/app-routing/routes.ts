@@ -6,6 +6,7 @@ import {ContactComponent} from '../contact/contact.component';
 import {ItemDetailComponent} from '../item-detail/item-detail.component';
 import {AboutComponent} from '../about/about.component';
 import {InventarioComponent} from '../inventario/inventario.component';
+import {UpdateItemComponent} from '../update-item/update-item.component';
 
 export const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -14,5 +15,6 @@ export const routes: Routes = [
   {path: 'acercade', component: AboutComponent},
   {path: 'itemdetail/:id', component: ItemDetailComponent},
   {path: 'inventario', component: InventarioComponent},
+  {path: 'itemEdit/:id', component: UpdateItemComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
